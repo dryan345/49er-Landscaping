@@ -1,17 +1,39 @@
 body {
-  background-color: #FFF0F5;
   margin: 0;
+  background-color: #D8D0C1;
 }
 
-/**** Navagation Bar ****/
+/**** Navigation Bar ****/
+
+#phoneicon {
+  text-align: right;
+  margin: 0;
+  right: 0;
+  padding-right: 40px;
+  padding-top: 5px;
+  position: fixed;
+  z-index: 50;
+}
+
+.above-nav {
+  background-color: #9CB380;
+  margin: 0;
+  padding-top: 5px;
+  color: #1C1C1C;
+  height: 25px;
+  width: 100%;
+  position: fixed;
+}
 
 .nav-bar {
-  background: #101010;
-  height: 65px;
+  background: #D8D0C1;
+  height: 96px;
   width: 100%;
-  position: relative;
+  position: fixed;
+  top: 0;
   margin: 0;
   padding: 0;
+  z-index: 2;
   -webkit-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.4);
   -moz-box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.4);
   box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.4);
@@ -22,16 +44,23 @@ body {
   text-align: right;
   padding-right: 30px;
   display: inline-block;
+  margin-top: 35px;
 }
 
 .nav-logo {
-  position: absolute;
+  position: fixed;
+  top: 0;
   left: 0;
-  padding-top: 10px;
-  padding-left: 30px;
-  color: white;
+  padding-left: 100px;
+  margin-top: 30px;
+  margin-left: 20px;
+  color: #1C1C1C;
   text-decoration: none;
   font-size: 36px;
+  z-index: 3;
+  background-color: #9CB380;
+  height: 150px;
+  width: 200px;
 }
 
 .nav-bar-ul {
@@ -41,7 +70,7 @@ body {
 
 .nav-links {
   text-decoration: none;
-  color: white;
+  color: #1C1C1C;
   font-size: 16pt;
   padding: 10px;
 
@@ -51,3 +80,60 @@ body {
 }
 
 /****  ****/
+.content-container {
+  margin-top: 96px;
+}
+
+.container-img {
+  overflow: hidden;
+  width: 100%;
+  height: 550px;
+  background-color: #2F3030;
+  display: block;
+}
+
+.slide-image {
+
+}
+
+.slick-next {
+  right: 15px;
+}
+
+.slick-prev {
+  left: 15px;
+  z-index: 1;
+}
+
+.jumboRant {
+  font-size: 36pt;
+  color: #1C1C1C;
+  margin: auto;
+  display: table;
+}
+
+.wrapper {
+  width: 100%;
+  height: 400px;
+  background-color: #9CB380;
+  position: relative;
+}
+
+.container-box {
+  width: 70%;
+  margin: auto;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+
+.box {
+  height: 300px;
+  width: 300px;
+  background-color: black;
+}
