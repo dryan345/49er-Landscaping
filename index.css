@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background-color: #D8D0C1;
+  background-color: #222;
 }
 
 /**** Navigation Bar ****/
@@ -16,7 +16,7 @@ body {
 }
 
 .above-nav {
-  background-color: #9CB380;
+  background-color: #6a982f;
   margin: 0;
   padding-top: 5px;
   color: #1C1C1C;
@@ -26,7 +26,7 @@ body {
 }
 
 .nav-bar {
-  background: #D8D0C1;
+  background: #222;
   height: 96px;
   width: 100%;
   position: fixed;
@@ -58,7 +58,7 @@ body {
   text-decoration: none;
   font-size: 36px;
   z-index: 3;
-  background-color: #9CB380;
+  background-color: #6a982f;
   height: 150px;
   width: 200px;
 }
@@ -70,9 +70,10 @@ body {
 
 .nav-links {
   text-decoration: none;
-  color: #1C1C1C;
+  color: #fff;
   font-size: 16pt;
   padding: 10px;
+  font-family: 'Saira Semi Condensed', sans-serif;
 
 }
 .nav-links:hover {
@@ -111,15 +112,17 @@ body {
 
 .jumboRant {
   font-size: 36pt;
-  color: #1C1C1C;
+  color: #fff;
   margin: auto;
   display: table;
+  text-align: center;
+  font-family: 'Saira Semi Condensed', sans-serif;
 }
 
 .wrapper {
   width: 100%;
   height: 400px;
-  background-color: #9CB380;
+  background-color: #6a982f;
   position: relative;
 }
 
