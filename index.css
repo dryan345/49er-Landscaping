@@ -78,22 +78,25 @@ body {
 .nav-links:hover {
   color: #FE4444;
 }
-
 /****  ****/
+
 .content-container {
   margin-top: 96px;
 }
 
+/**** Slideshow CSS ****/
+
 .container-img {
-  overflow: hidden;
-  width: 100%;
-  height: 550px;
-  background-color: #2F3030;
   display: block;
+  overflow: hidden;
+  background-color: #2F3030;
 }
 
-.slide-image {
-
+.slider-image {
+  display: block;
+  height: 550px;
+  width: 100%;
+  object-fit: cover;
 }
 
 .slick-next {
@@ -104,6 +107,7 @@ body {
   left: 15px;
   z-index: 1;
 }
+/****  ****/
 
 .jumboRant {
   font-size: 36pt;
