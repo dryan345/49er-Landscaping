@@ -149,13 +149,18 @@ body {
 
 .header-img {
   display: block;
-  height: 350px;
+  height: 450px;
   width: 100%;
   object-fit: cover;
+  object-position: 75% 75%;
+}
+
+.rant-container {
+  margin: 50px auto;
 }
 
 .project-rant {
-  font-size: 18pt;
+  font-size: 24pt;
   color: #fff;
   margin: auto;
   display: table;
@@ -165,7 +170,7 @@ body {
 
 /*** Images ***/
 
-#rig {
+#gallery {
     width: 95%;
     margin:0 auto; /*center aligned*/
     padding:0;
@@ -173,7 +178,7 @@ body {
     list-style:none;
     background-color:#000;
 }
-#rig li {
+#gallery li {
     display: inline-block;
     *display:inline;/*for IE6 - IE7*/
     width:25%;
@@ -184,30 +189,33 @@ body {
 }
 
 /* The wrapper for each item */
-.rig-cell {
+.gallery-cell {
     /*margin:12px;
     box-shadow:0 0 6px rgba(0,0,0,0.3);*/
     display:block;
     position: relative;
     overflow:hidden;
+
 }
 
 /* If have the image layer */
-.rig-img {
+.gallery-img {
     display:block;
     width: 100%;
-    height: auto;
+    height: 300px;
     border:none;
     transform:scale(1);
     transition:all 1s;
+    object-fit: cover;
+    object-position: 0 0;
 }
 
-#rig li:hover .rig-img {
+#gallery li:hover .gallery-img {
     transform:scale(1.05);
 }
 
 /* If have the overlay layer */
-.rig-overlay {
+.gallery-overlay {
     position: absolute;
     display:block;
     top: 0;
@@ -221,12 +229,12 @@ body {
     filter:alpha(opacity=0);/*For IE6 - IE8*/
     transition:all 0.6s;
 }
-#rig li:hover .rig-overlay {
+#gallery li:hover .gallery-overlay {
     opacity:0.8;
 }
 
 /* If have captions */
-.rig-text {
+.gallery-text {
     display:block;
     padding:0 30px;
     box-sizing:border-box;
@@ -246,7 +254,43 @@ body {
     transform:translateY(-20px);
     transition:all .3s;
 }
-#rig li:hover .rig-text {
+#gallery li:hover .gallery-text {
     transform:translateY(0px);
     opacity:0.9;
+}
+
+.dropdown {
+
+}
+
+.dropdown > ul {
+  display: none;
+  list-style: none;
+  padding: 12px 0;
+}
+
+.dropdown-content {
+    padding-top: 12px;
+    display: none;
+    position: absolute;
+    background-color: #222;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
