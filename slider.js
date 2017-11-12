@@ -9,4 +9,12 @@ $(document).ready(function() {
     arrows: true,
     pauseOnHover: false,
   });
+
+  $(window).scroll(function () {
+     $('.nav-logo').fadeOut();
+      if($(document).scrollTop() === 0){
+       $('.nav-logo').fadeIn();
+      }
+  });
+
 });
