@@ -1,3 +1,60 @@
+<!-- <?php
+      if (isset($_POST["submit"])) {
+          $firstname = $_POST['firstname'];
+          $lastname = $_POST['lastname'];
+          $company = $_POST['company'];
+          $phone = $_POST['phone'];
+          $email = $_POST['email'];
+          $county = $_POST['county'];
+          $message = $_POST['message'];
+          $from = '49erLandscaping Contact Form';
+          $to = 'dryan345@hotmail.com';
+          $subject = '49erLandscaping Contact Form';
+
+          $body = "From: $firstname $lastname\n
+                   Company: $company\n
+                   Phone: $phone\n
+                   Email: $email\n
+                   County: $county\n
+                   Message: $message";
+
+        // Check for name
+        if (!$_POST['firstname'] && !$_POST['lastname']) {
+              $errName = "Please enter first and last name";
+        }
+
+        // Check for phone
+        if (!$_POST['phone']) {
+              $errPhone = "Please enter your phone number";
+        }
+
+        // Check for Email
+        if (!$_POST['email'] || !filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+              $errEmail = "Please enter a valid email address";
+        }
+
+        // Check for County
+        if (!$_POST['county']) {
+              $errCounty = "Please select your county";
+        }
+
+        if (!$_POST['message']) {
+              $errMessage = "Please leave a message";
+        }
+
+    // If no errors send email
+    if (!$errName && !$errPhone && !$errEmail && !$errCounty && !$errMessage) {
+          if (mail ($to, $subject, $body, $from)) {
+                $result = '<div class="alert alert-danger">Thank you! We will be in touch shortly</div>';
+    } else {
+        $result = '<div class="alert alert-danger">Sorry there was an error sending your message. Please try again later.</div>';
+    }
+  }
+
+    }
+?> -->
+
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -38,44 +95,67 @@
         <img class="header-img" src="images/IMG_0023.JPG" alt="img">
         <span class="header-img-text">CONTACT US</span>
       </div>
+
       <!--- Contact Forum --->
-      <div class="form-container">
-        <form class="contact-form" action="mailto:dryan345@hotmail.com" method="post">
-          <label>
+      <div class="contact-section-wrapper">
+        <div class="contact-wrapper">
+        <h2 id="contact-h2">Contact us today by filling out the form.</h2>
+        <form class="contact-form">
+          <label class="form-label">
             First Name*:
             Last Name*:<br>
-            <input type="text" name="firstname" required>
-            <input type="text" name="lastname" required><br>
+            <input class="form-input" type="text" name="firstname" required value="<?php echo htmlspecialchars($_POST['firstname']); ?>">
+            <input class="form-input" type="text" name="lastname" required value="<?php echo htmlspecialchars($_POST['lastname']); ?>"><br>
+            <?php echo "<p class='text-danger'>$errName</p>";?>
           </label>
-          <label>
+          <label class="form-label">
             Company:<br>
-            <input type="text" name="company"><br>
+            <input class="form-input" type="text" name="company"><br>
           </label>
-          <label>
-            Phone:<br>
-            <input type="text" name="phone"><br>
+          <label class="form-label">
+            Phone*:<br>
+            <input class="form-input" type="text" name="phone" value="<?php echo htmlspecialchars($_POST['phone']); ?>"><br>
+            <?php echo "<p class='text-danger'>$errPhone</p>";?>
           </label>
-          <label>
+          <label class="form-label">
             Email*:<br>
-            <input type="text" name="email" required><br>
+            <input class="form-input" type="email" name="email" required value="<?php echo htmlspecialchars($_POST['email']); ?>"><br>
+            <?php echo "<p class='text-danger'>$errEmail</p>";?>
           </label>
-          <label>
+          <label class="form-label">
             County*:<br>
-            <select class="county-select" name="county" required>
+            <select class="county-select" name="county" required value="<?php echo htmlspecialchars($_POST['county']); ?>">
               <option value disabled selected>Please Select</option>
               <option value="Nevada County (CA)">Nevada County (CA)</option>
               <option value="Yuba County (CA)">Yuba County (CA)</option>
             </select><br>
+            <?php echo "<p class='text-danger'>$errCounty</p>";?>
           </label>
           Leave us a Message!*<br>
-          <textarea name="message" required></textarea>
+          <textarea name="message" required value="<?php echo htmlspecialchars($_POST['message']); ?>"></textarea>
+          <?php echo "<p class='text-danger'>$errMessage</p>";?>
         </form>
+        </div>
+        <div class="contact-info">
+          <h3 id="contact-h3">Contact Info</h3>
+        </div>
       </div>
+
+      <div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2">
+							<input id="submit" name="submit" type="submit" value="Send" class="btn btn-primary">
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-sm-10 col-sm-offset-2">
+							<?php echo $result;?>
+						</div>
 
     </div>
     <!-- Scripts -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="main.js"></script>
   </body>
 </html>
